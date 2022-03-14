@@ -8,20 +8,18 @@ import Util.Styles exposing (..)
 
 content : Html msg
 content =
-    div [ style "padding" "1rem" ]
-        (Components.siteTitle
-            ++ [ div
-                    [ style "margin-bottom" "0.3rem"
-                    , style "display" "flex"
-                    , style "gap" "0.3rem"
-                    ]
-                    [ input
-                        [ placeholder "Username" ]
-                        []
-                    , input
-                        [ placeholder "Password" ]
-                        []
-                    ]
-               , Components.button [] "Login"
-               ]
-        )
+    Components.paddedDiv
+        [ div
+            [ style "margin-bottom" "0.3rem"
+            , style "display" "flex"
+            , style "gap" "0.3rem"
+            ]
+            [ input
+                [ placeholder "Username" ]
+                []
+            , input
+                [ placeholder "Password" ]
+                []
+            ]
+        , Components.button [] "Login"
+        ]

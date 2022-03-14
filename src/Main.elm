@@ -1,9 +1,9 @@
 module Main exposing (..)
 
-import Browser
+import Browser exposing (..)
+import Html exposing (Html)
 import Page.Login as LoginPage
 import Util.Components as Components
-import Util.Styles exposing (..)
 
 
 type alias Model =
@@ -17,7 +17,8 @@ type Msg
 
 main : Program () Model Msg
 main =
-    Browser.document
+    -- TODO: Use application instead of document to do page navigation
+    document
         { init = init
         , view = view
         , update = update
@@ -47,10 +48,17 @@ update msg model =
             ( model, Cmd.none )
 
 
-view : Model -> Browser.Document Msg
+view : Model -> Document Msg
 view _ =
     { title = Components.title
     , body =
-        [ LoginPage.content
+        [ Components.paddedDiv Components.siteTitle -- website header
+        , page -- website page content
         ]
     }
+
+
+page : Html Msg
+page =
+    -- TODO: Determine which page to display based on URL
+    LoginPage.content

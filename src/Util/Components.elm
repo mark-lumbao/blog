@@ -34,8 +34,7 @@ siteTitle =
         [ Html.text title ]
     , Html.p
         (noSpaces
-            ++ [ style "margin-bottom" "1rem"
-               , style "padding-left" "0.5rem"
+            ++ [ style "padding-left" "0.5rem"
                , style "font-size" "15px"
                , style "font-style" "italic"
                , style "color" colorTextDark
@@ -43,3 +42,9 @@ siteTitle =
         )
         [ Html.text "by Mark Anthony Lumbao" ]
     ]
+
+
+paddedDiv : List (Html.Html msg) -> Html.Html msg
+paddedDiv content =
+    Html.div [ style "padding" "1rem" ]
+        content
