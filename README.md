@@ -1,11 +1,25 @@
 # Blog-site
 
-A blog website built using Elm.
+A blog website built using Elm and webpack.
 
-### To run with index.html
+## Instructions
+
+### Build
 
 ```sh
-elm make src/Main.elm --output dist/bundle.js
+npm run build
 ```
 
-Then you can serve it however you like.
+### Run
+
+```sh
+npm start
+```
+
+### Development
+
+- this offers hot module replacement
+
+```sh
+npm run hot
+```
